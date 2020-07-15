@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleCatalog.API", "VehicleCatalog.API\VehicleCatalog.API.csproj", "{C6289A0B-D181-411E-8A2F-4B9D8098DF1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleCatalog.Test", "VehicleCatalog.Test\VehicleCatalog.Test.csproj", "{C577AB72-B28A-43C7-962D-C39652436D91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{C6289A0B-D181-411E-8A2F-4B9D8098DF1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6289A0B-D181-411E-8A2F-4B9D8098DF1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6289A0B-D181-411E-8A2F-4B9D8098DF1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C577AB72-B28A-43C7-962D-C39652436D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C577AB72-B28A-43C7-962D-C39652436D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C577AB72-B28A-43C7-962D-C39652436D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C577AB72-B28A-43C7-962D-C39652436D91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
