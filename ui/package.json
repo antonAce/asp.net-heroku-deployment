@@ -2,11 +2,10 @@
   "name": "vehicle-catalog-ui",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
+    "build:dev": "node ./node_modules/@angular/cli/bin/ng build --output-path=../src/VehicleCatalog.API/wwwroot",
+    "build:prod": "node ./node_modules/@angular/cli/bin/ng build --prod --output-hashing=none --output-path=../src/VehicleCatalog.API/wwwroot",
+    "test": "node ./node_modules/@angular/cli/bin/ng test --browsers=ChromeHeadless",
+    "lint": "node ./node_modules/@angular/cli/bin/ng lint",
     "e2e": "ng e2e"
   },
   "private": true,
