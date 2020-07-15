@@ -2,6 +2,8 @@
 
 **.NET Core + Angular** continuous deployment on Heroku using Github Actions.
 
-Used actions:
+### Used actions:
 
-CI Pipeline: actions/setup-dotnet@v1, actions/setup-node@v1
+- CI Pipeline: actions/setup-dotnet, actions/setup-node
+
+- CD Pipeline: [akhileshns/heroku-deploy](https://github.com/AkhileshNS/heroku-deploy)
