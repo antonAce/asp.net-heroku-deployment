@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace VehicleCatalog.Data.Entities
 {
@@ -10,5 +11,7 @@ namespace VehicleCatalog.Data.Entities
 
         public int? LocationId { get; set; }
         public Location Location { get; set; }
+        
+        public ICollection<Model> Models { get; set; }
     }
 }
