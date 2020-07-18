@@ -8,5 +8,7 @@
       <ProjectReference Include="..\VehicleCatalog.Business\VehicleCatalog.Business.csproj" />
     </ItemGroup>
 
-
+    <ItemGroup>
+      <Folder Include="wwwroot" />
+    </ItemGroup>
 </Project>
