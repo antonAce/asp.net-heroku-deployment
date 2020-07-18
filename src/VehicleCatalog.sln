@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleCatalog.Test", "Vehi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleCatalog.Data", "VehicleCatalog.Data\VehicleCatalog.Data.csproj", "{7F00F5A7-EBB3-4074-821F-D76DC6EC0483}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleCatalog.Business", "VehicleCatalog.Business\VehicleCatalog.Business.csproj", "{FEDE9BE2-E382-47A0-AB18-B34BB7E0CF2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{7F00F5A7-EBB3-4074-821F-D76DC6EC0483}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F00F5A7-EBB3-4074-821F-D76DC6EC0483}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F00F5A7-EBB3-4074-821F-D76DC6EC0483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEDE9BE2-E382-47A0-AB18-B34BB7E0CF2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEDE9BE2-E382-47A0-AB18-B34BB7E0CF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEDE9BE2-E382-47A0-AB18-B34BB7E0CF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEDE9BE2-E382-47A0-AB18-B34BB7E0CF2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
