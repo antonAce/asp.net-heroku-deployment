@@ -1,0 +1,44 @@
+name: Heroku deploy
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: ANGULAR Setup Node.js
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12'
+
+    - name: ANGULAR Install Packages
+      run: npm install --prefix ui
+
+    - name: ANGULAR Build in production
+      run: npm run build:prod --prefix ui
+
+    - name: DOTNET Set up .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.102'
+
+    - name: DOTNET Build in production
+      run: dotnet build --configuration Release
+
+    - name: DOTNET Publish
+      run: dotnet publish -c Release
+      
+    - name: Deploy to Heroku
+      uses: akhileshns/heroku-deploy@v3.0.5
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+        heroku_email: ${{secrets.HEROKU_EMAIL}}
+        buildpack: "jincod/dotnetcore-buildpack"
+        branch: "master"
