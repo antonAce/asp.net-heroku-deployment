@@ -29,10 +29,10 @@ jobs:
         dotnet-version: '3.1.102'
 
     - name: DOTNET Build in production
-      run: dotnet build --configuration Release
+      run: dotnet build src/VehicleCatalog.sln -c Release
 
     - name: DOTNET Publish
-      run: dotnet publish -c Release
+      run: dotnet publish src/VehicleCatalog.sln -c Release
       
     - name: Deploy to Heroku
       uses: akhileshns/heroku-deploy@v3.0.5
