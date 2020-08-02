@@ -9,6 +9,6 @@ FROM mcr.microsoft.com/dotnet/core/aspnet AS runtime
 WORKDIR /app
 COPY --from=build ./src/app ./
 ENV ASPNETCORE_URLS http://*:5000
-ENV ASPNETCORE_ENVIRONMENT Development
+ENV ASPNETCORE_ENVIRONMENT Production
 
 ENTRYPOINT ["dotnet", "VehicleCatalog.API.dll"]
