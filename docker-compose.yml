@@ -6,6 +6,6 @@ nginx:
         - "80:80"
 
 kestrel:
-    build: .
+    build: ./src
     ports:
         - "5000"

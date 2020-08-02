@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/core/sdk AS build
 WORKDIR /src
 
-COPY ./src .
+COPY . .
 RUN dotnet restore VehicleCatalog.sln
 RUN dotnet publish VehicleCatalog.sln -c Release -o app
 
