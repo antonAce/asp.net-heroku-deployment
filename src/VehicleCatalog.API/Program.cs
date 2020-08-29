@@ -26,7 +26,7 @@ namespace VehicleCatalog.API
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseWebRoot("wwwroot");
+                    webBuilder.UseWebRoot("clientapp/wwwroot");
                 });
     }
 }

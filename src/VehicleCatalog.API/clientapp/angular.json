@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "projects": {
+    "vehiclestore": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/vehiclestore",
+      "sourceRoot": "apps/vehiclestore/src",
+      "prefix": "clientapp",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "wwwroot",
+            "index": "apps/vehiclestore/src/index.html",
+            "main": "apps/vehiclestore/src/main.ts",
+            "polyfills": "apps/vehiclestore/src/polyfills.ts",
+            "tsConfig": "apps/vehiclestore/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/vehiclestore/src/favicon.ico",
+              "apps/vehiclestore/src/assets"
+            ],
+            "styles": ["apps/vehiclestore/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/vehiclestore/src/environments/environment.ts",
+                  "with": "apps/vehiclestore/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "vehiclestore:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "vehiclestore:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "vehiclestore:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/vehiclestore/tsconfig.app.json",
+              "apps/vehiclestore/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/vehiclestore/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/vehiclestore/jest.config.js",
+            "tsConfig": "apps/vehiclestore/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/vehiclestore/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "vehiclestore-e2e": {
+      "root": "apps/vehiclestore-e2e",
+      "sourceRoot": "apps/vehiclestore-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/vehiclestore-e2e/cypress.json",
+            "tsConfig": "apps/vehiclestore-e2e/tsconfig.e2e.json",
+            "devServerTarget": "vehiclestore:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "vehiclestore:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/vehiclestore-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/vehiclestore-e2e/**/*"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "vehiclestore"
+}
