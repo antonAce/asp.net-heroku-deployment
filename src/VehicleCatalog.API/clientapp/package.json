@@ -26,7 +26,7 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "lint:ci": "node ./node_modules/@nrwl/cli/bin/nx lint",
+    "lint:ci": "node ./node_modules/@nrwl/cli/bin/nx workspace-lint && node ./node_modules/@nrwl/cli/bin/nx lint",
     "build:ci": "node ./node_modules/@nrwl/cli/bin/nx build",
     "test:ci": "node ./node_modules/@nrwl/cli/bin/nx test",
     "build:deploy": "node ./node_modules/@nrwl/cli/bin/nx build --prod"
@@ -61,7 +61,7 @@
     "codelyzer": "~5.0.1",
     "jest-preset-angular": "8.2.1",
     "@nrwl/jest": "10.1.0",
-    "jest": "26.1.0",
+    "jest": "26.2.2",
     "@types/jest": "26.0.8",
     "ts-jest": "26.1.4",
     "cypress": "^4.1.0",
