@@ -16,10 +16,10 @@ jobs:
       with:
         node-version: '12'
     - name: Install Packages
-      run: npm install --prefix src/VehicleCatalog.API/clientapp
+      run: npm install --prefix src/Web/AutoDock.Web.Spa/clientapp
     - name: Lint
-      run: npm run lint:ci --prefix src/VehicleCatalog.API/clientapp
+      run: npm run lint:ci --prefix src/Web/AutoDock.Web.Spa/clientapp
     - name: Build
-      run: npm run build:ci --prefix src/VehicleCatalog.API/clientapp
+      run: npm run build:ci --prefix src/Web/AutoDock.Web.Spa/clientapp
     - name: Test
-      run: npm run test:ci --prefix src/VehicleCatalog.API/clientapp
+      run: npm run test:ci --prefix src/Web/AutoDock.Web.Spa/clientapp
