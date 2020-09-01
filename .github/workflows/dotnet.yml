@@ -16,8 +16,8 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install packages
-      run: dotnet restore src/VehicleCatalog.sln
+      run: dotnet restore src/AutoDock.sln
     - name: Build
-      run: dotnet build src/VehicleCatalog.sln --configuration Release --no-restore
+      run: dotnet build src/AutoDock.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test src/VehicleCatalog.Test/VehicleCatalog.Test.csproj --configuration Release
+      run: dotnet test test/AutoDock.Test.sln --configuration Release

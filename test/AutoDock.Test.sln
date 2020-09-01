@@ -6,9 +6,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{C2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{BB9FC37A-A2A7-4417-9721-A7FC1C3285B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Web.Spa.Test", "Web\AutoDock.Web.Spa.Test\AutoDock.Web.Spa.Test.csproj", "{01F12E04-F34A-4935-B7B7-170731AB45E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{01F12E04-F34A-4935-B7B7-170731AB45E5} = {CBD68A8C-33EB-421E-B2CB-36784D4B59B4}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01F12E04-F34A-4935-B7B7-170731AB45E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F12E04-F34A-4935-B7B7-170731AB45E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F12E04-F34A-4935-B7B7-170731AB45E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F12E04-F34A-4935-B7B7-170731AB45E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
