@@ -1,11 +1,11 @@
 nginx:
     build: ./nginx
     links:
-        - kestrel:kestrel
+        - rootspa:rootspa
     ports:
         - "80:80"
 
-kestrel:
-    build: ./src
+rootspa:
+    build: ./src/Web/AutoDock.Web.Spa
     ports:
         - "5000"
