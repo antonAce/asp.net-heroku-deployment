@@ -1,0 +1,5 @@
+clientapp/node_modules/
+clientapp/wwwroot/
+
+bin/
+obj/
