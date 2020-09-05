@@ -28,31 +28,10 @@ namespace AutoDock.Web.Spa
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.Configure<ForwardedHeadersOptions>(options =>
-            {
-                options.ForwardedHeaders =
-                    ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
-            });
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseForwardedHeaders(new ForwardedHeadersOptions
-            {
-                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
-            });
-            
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseHttpsRedirection();
-            }
-
-            app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthorization();

@@ -19,7 +19,8 @@ FROM mcr.microsoft.com/dotnet/core/aspnet AS runtime
 WORKDIR /app
 
 COPY --from=buildcore /web/release /app
-ENV ASPNETCORE_URLS https://*:5001
+ENV ASPNETCORE_URLS http://*:5000
 ENV ASPNETCORE_ENVIRONMENT Production
+ENV ASPNETCORE_FORWARDEDHEADERS_ENABLED true
 
 ENTRYPOINT ["dotnet", "AutoDock.Web.Spa.dll"]
