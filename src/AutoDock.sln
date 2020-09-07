@@ -8,6 +8,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{19
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Web.Spa", "Web\AutoDock.Web.Spa\AutoDock.Web.Spa.csproj", "{2DE878D8-FE9E-4635-B046-3BCB6DE60274}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E43C9B37-8AE0-41AA-9D30-AE67178C3C6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Domain.Core", "Catalog\Domain\AutoDock.Domain.Core\AutoDock.Domain.Core.csproj", "{24B620A9-C849-4132-9E5A-7733AE778417}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +19,17 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2DE878D8-FE9E-4635-B046-3BCB6DE60274} = {B5C14AB8-802E-49C7-A63E-AAF0F2441C2E}
+		{E43C9B37-8AE0-41AA-9D30-AE67178C3C6D} = {CCA3644D-40FF-4FAB-BC0E-2EDACC338F3D}
+		{24B620A9-C849-4132-9E5A-7733AE778417} = {E43C9B37-8AE0-41AA-9D30-AE67178C3C6D}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2DE878D8-FE9E-4635-B046-3BCB6DE60274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2DE878D8-FE9E-4635-B046-3BCB6DE60274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DE878D8-FE9E-4635-B046-3BCB6DE60274}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DE878D8-FE9E-4635-B046-3BCB6DE60274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24B620A9-C849-4132-9E5A-7733AE778417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B620A9-C849-4132-9E5A-7733AE778417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B620A9-C849-4132-9E5A-7733AE778417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24B620A9-C849-4132-9E5A-7733AE778417}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
