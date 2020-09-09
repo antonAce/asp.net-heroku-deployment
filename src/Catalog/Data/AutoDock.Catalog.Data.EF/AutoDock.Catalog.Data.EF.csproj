@@ -5,16 +5,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Repositories" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\..\Domain\AutoDock.Catalog.Domain.Core\AutoDock.Catalog.Domain.Core.csproj" />
       <ProjectReference Include="..\..\Domain\AutoDock.Catalog.Domain.Interfaces\AutoDock.Catalog.Domain.Interfaces.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
     </ItemGroup>
 
 </Project>

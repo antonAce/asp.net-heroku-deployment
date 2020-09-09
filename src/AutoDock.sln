@@ -18,6 +18,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{33E08359-2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Catalog.Data.EF", "Catalog\Data\AutoDock.Catalog.Data.EF\AutoDock.Catalog.Data.EF.csproj", "{CC76B5A8-AD41-4A98-B743-A805D40335D5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{D445EF80-D3A2-4A48-A88F-4D8772206CB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Catalog.Business.Interfaces", "Catalog\Business\AutoDock.Catalog.Business.Interfaces\AutoDock.Catalog.Business.Interfaces.csproj", "{0807AE0C-4338-4355-AD29-19D66E2AA40C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Catalog.Business.Implementation", "Catalog\Business\AutoDock.Catalog.Business.Implementation\AutoDock.Catalog.Business.Implementation.csproj", "{AF16D341-75E3-482A-8569-E32295D0C841}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +36,9 @@ Global
 		{21033116-075F-4EFF-B5F8-E79EFE1766B6} = {E43C9B37-8AE0-41AA-9D30-AE67178C3C6D}
 		{33E08359-285E-4972-896C-6F3B762936D8} = {CCA3644D-40FF-4FAB-BC0E-2EDACC338F3D}
 		{CC76B5A8-AD41-4A98-B743-A805D40335D5} = {33E08359-285E-4972-896C-6F3B762936D8}
+		{D445EF80-D3A2-4A48-A88F-4D8772206CB4} = {CCA3644D-40FF-4FAB-BC0E-2EDACC338F3D}
+		{0807AE0C-4338-4355-AD29-19D66E2AA40C} = {D445EF80-D3A2-4A48-A88F-4D8772206CB4}
+		{AF16D341-75E3-482A-8569-E32295D0C841} = {D445EF80-D3A2-4A48-A88F-4D8772206CB4}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2DE878D8-FE9E-4635-B046-3BCB6DE60274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -48,5 +57,13 @@ Global
 		{CC76B5A8-AD41-4A98-B743-A805D40335D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC76B5A8-AD41-4A98-B743-A805D40335D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC76B5A8-AD41-4A98-B743-A805D40335D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0807AE0C-4338-4355-AD29-19D66E2AA40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0807AE0C-4338-4355-AD29-19D66E2AA40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0807AE0C-4338-4355-AD29-19D66E2AA40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0807AE0C-4338-4355-AD29-19D66E2AA40C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF16D341-75E3-482A-8569-E32295D0C841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF16D341-75E3-482A-8569-E32295D0C841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF16D341-75E3-482A-8569-E32295D0C841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF16D341-75E3-482A-8569-E32295D0C841}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

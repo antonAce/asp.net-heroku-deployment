@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Mapping" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="10.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Domain\AutoDock.Catalog.Domain.Interfaces\AutoDock.Catalog.Domain.Interfaces.csproj" />
+      <ProjectReference Include="..\AutoDock.Catalog.Business.Interfaces\AutoDock.Catalog.Business.Interfaces.csproj" />
+    </ItemGroup>
+
+</Project>
