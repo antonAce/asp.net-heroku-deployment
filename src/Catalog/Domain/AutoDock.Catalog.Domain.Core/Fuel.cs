@@ -1,4 +1,4 @@
-namespace AutoDock.Domain.Core
+namespace AutoDock.Catalog.Domain.Core
 {
     public enum Fuel
     {

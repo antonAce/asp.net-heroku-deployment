@@ -10,7 +10,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Web.Spa", "Web\Aut
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E43C9B37-8AE0-41AA-9D30-AE67178C3C6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Domain.Core", "Catalog\Domain\AutoDock.Domain.Core\AutoDock.Domain.Core.csproj", "{24B620A9-C849-4132-9E5A-7733AE778417}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Catalog.Domain.Core", "Catalog\Domain\AutoDock.Catalog.Domain.Core\AutoDock.Catalog.Domain.Core.csproj", "{24B620A9-C849-4132-9E5A-7733AE778417}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Catalog.Domain.Interfaces", "Catalog\Domain\AutoDock.Catalog.Domain.Interfaces\AutoDock.Catalog.Domain.Interfaces.csproj", "{21033116-075F-4EFF-B5F8-E79EFE1766B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{33E08359-285E-4972-896C-6F3B762936D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Catalog.Data.EF", "Catalog\Data\AutoDock.Catalog.Data.EF\AutoDock.Catalog.Data.EF.csproj", "{CC76B5A8-AD41-4A98-B743-A805D40335D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,9 @@ Global
 		{2DE878D8-FE9E-4635-B046-3BCB6DE60274} = {B5C14AB8-802E-49C7-A63E-AAF0F2441C2E}
 		{E43C9B37-8AE0-41AA-9D30-AE67178C3C6D} = {CCA3644D-40FF-4FAB-BC0E-2EDACC338F3D}
 		{24B620A9-C849-4132-9E5A-7733AE778417} = {E43C9B37-8AE0-41AA-9D30-AE67178C3C6D}
+		{21033116-075F-4EFF-B5F8-E79EFE1766B6} = {E43C9B37-8AE0-41AA-9D30-AE67178C3C6D}
+		{33E08359-285E-4972-896C-6F3B762936D8} = {CCA3644D-40FF-4FAB-BC0E-2EDACC338F3D}
+		{CC76B5A8-AD41-4A98-B743-A805D40335D5} = {33E08359-285E-4972-896C-6F3B762936D8}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2DE878D8-FE9E-4635-B046-3BCB6DE60274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -31,5 +40,13 @@ Global
 		{24B620A9-C849-4132-9E5A-7733AE778417}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24B620A9-C849-4132-9E5A-7733AE778417}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24B620A9-C849-4132-9E5A-7733AE778417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21033116-075F-4EFF-B5F8-E79EFE1766B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21033116-075F-4EFF-B5F8-E79EFE1766B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21033116-075F-4EFF-B5F8-E79EFE1766B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21033116-075F-4EFF-B5F8-E79EFE1766B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC76B5A8-AD41-4A98-B743-A805D40335D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC76B5A8-AD41-4A98-B743-A805D40335D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC76B5A8-AD41-4A98-B743-A805D40335D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC76B5A8-AD41-4A98-B743-A805D40335D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,6 +1,6 @@
 using System;
 
-namespace AutoDock.Domain.Core
+namespace AutoDock.Catalog.Domain.Core
 {
     public class Manufacturer
     {

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Repositories" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Domain\AutoDock.Catalog.Domain.Core\AutoDock.Catalog.Domain.Core.csproj" />
+      <ProjectReference Include="..\..\Domain\AutoDock.Catalog.Domain.Interfaces\AutoDock.Catalog.Domain.Interfaces.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+    </ItemGroup>
+
+</Project>
