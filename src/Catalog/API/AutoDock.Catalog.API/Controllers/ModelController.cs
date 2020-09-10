@@ -17,10 +17,8 @@ namespace AutoDock.Catalog.API.Controllers
     {
         private readonly IModelService _modelService;
 
-        public ModelController(IModelService modelService)
-        {
+        public ModelController(IModelService modelService) =>
             _modelService = modelService;
-        }
 
         [HttpGet]
         public async Task<IReadOnlyCollection<ReadModelDto>> FetchModels(
