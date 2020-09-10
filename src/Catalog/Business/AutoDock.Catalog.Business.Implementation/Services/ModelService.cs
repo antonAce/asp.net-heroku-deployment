@@ -31,7 +31,7 @@ namespace AutoDock.Catalog.Business.Implementation.Services
             CancellationToken token) =>
             Mapper.Map<IEnumerable<Model>, IReadOnlyCollection<ReadModelDto>>(await ModelRepository.FetchAsync(
                 itemsCount,
-                itemsCount * pageNumber,
+                itemsCount * (pageNumber - 1),
                 token));
 
         public async Task<ReadModelDto> FindModelAsync(int id, CancellationToken token) =>

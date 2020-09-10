@@ -24,6 +24,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Catalog.Business.I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Catalog.Business.Implementation", "Catalog\Business\AutoDock.Catalog.Business.Implementation\AutoDock.Catalog.Business.Implementation.csproj", "{AF16D341-75E3-482A-8569-E32295D0C841}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{0DF92E9F-C5EF-4F9B-8FBC-71B792529347}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDock.Catalog.API", "Catalog\API\AutoDock.Catalog.API\AutoDock.Catalog.API.csproj", "{94E5F154-EC6B-488A-BBD5-26DDDD0E3B72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,8 @@ Global
 		{D445EF80-D3A2-4A48-A88F-4D8772206CB4} = {CCA3644D-40FF-4FAB-BC0E-2EDACC338F3D}
 		{0807AE0C-4338-4355-AD29-19D66E2AA40C} = {D445EF80-D3A2-4A48-A88F-4D8772206CB4}
 		{AF16D341-75E3-482A-8569-E32295D0C841} = {D445EF80-D3A2-4A48-A88F-4D8772206CB4}
+		{0DF92E9F-C5EF-4F9B-8FBC-71B792529347} = {CCA3644D-40FF-4FAB-BC0E-2EDACC338F3D}
+		{94E5F154-EC6B-488A-BBD5-26DDDD0E3B72} = {0DF92E9F-C5EF-4F9B-8FBC-71B792529347}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2DE878D8-FE9E-4635-B046-3BCB6DE60274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -65,5 +71,9 @@ Global
 		{AF16D341-75E3-482A-8569-E32295D0C841}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF16D341-75E3-482A-8569-E32295D0C841}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF16D341-75E3-482A-8569-E32295D0C841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94E5F154-EC6B-488A-BBD5-26DDDD0E3B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94E5F154-EC6B-488A-BBD5-26DDDD0E3B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94E5F154-EC6B-488A-BBD5-26DDDD0E3B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94E5F154-EC6B-488A-BBD5-26DDDD0E3B72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

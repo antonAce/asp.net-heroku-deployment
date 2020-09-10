@@ -12,7 +12,7 @@ namespace AutoDock.Catalog.Data.EF.Dependencies
 {
     public static class DataProviderExtensions
     {
-        public static void AddPostgreSqlStorage(this IServiceCollection services, string connectionString)
+        public static void AddPostgreStorage(this IServiceCollection services, string connectionString)
         {
             services.AddDbContext<AutoDockContext>(options => options.UseNpgsql(connectionString));
             services.AddScoped<IUoW, UoW>();
