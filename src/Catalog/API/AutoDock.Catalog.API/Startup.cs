@@ -14,6 +14,8 @@ using Microsoft.Extensions.Logging;
 using AutoDock.Catalog.Data.EF.Dependencies;
 using AutoDock.Catalog.Business.Implementation.Dependencies;
 
+using AutoDock.Catalog.API.Filters.Implementation;
+
 namespace AutoDock.Catalog.API
 {
     public class Startup
@@ -29,7 +31,10 @@ namespace AutoDock.Catalog.API
         {
             services.AddPostgreStorage(Configuration.GetSection("Database:ConnectionStrings").Value);
             services.AddServices();
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.Filters.Add<GlobalExceptionFilter>();
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
