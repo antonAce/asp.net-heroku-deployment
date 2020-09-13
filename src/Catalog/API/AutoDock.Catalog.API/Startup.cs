@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 using AutoDock.Catalog.Data.EF.Dependencies;
 using AutoDock.Catalog.Business.Implementation.Dependencies;
@@ -29,6 +31,10 @@ namespace AutoDock.Catalog.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(Configuration)
+                .CreateLogger();
+
             services.AddPostgreStorage(Configuration.GetSection("Database:ConnectionStrings").Value);
             services.AddServices();
             services.AddControllers(options =>
@@ -39,6 +45,8 @@ namespace AutoDock.Catalog.API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSerilogRequestLogging();
+            
             app.UseRouting();
 
             app.UseAuthorization();

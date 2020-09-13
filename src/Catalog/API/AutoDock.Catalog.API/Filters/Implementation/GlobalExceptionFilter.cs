@@ -19,13 +19,14 @@ namespace AutoDock.Catalog.API.Filters.Implementation
 
         public void OnException(ExceptionContext context)
         {
-            _logger.LogError(JsonSerializer.Serialize(new {
-                Date = DateTime.Now,
-                Header = "ERROR",
-                Origin = typeof(GlobalExceptionFilter).FullName,
-                Message = context.Exception.Message,
-                Trace = context.Exception.StackTrace
-            }));
+            var message = new
+            {
+                typeof(GlobalExceptionFilter).FullName,
+                context.Exception.Message,
+                context.Exception.StackTrace
+            };
+
+            _logger.LogError("{message}", message);
 
             context.Result = new ContentResult
             {
