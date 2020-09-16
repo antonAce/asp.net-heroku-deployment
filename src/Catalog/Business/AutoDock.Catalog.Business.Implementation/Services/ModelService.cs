@@ -55,5 +55,25 @@ namespace AutoDock.Catalog.Business.Implementation.Services
             await ModelRepository.CreateAsync(modelToCreate, token);
             await UnitOfWork.CommitAsync(token);
         }
+
+        public async Task EditModel(int id, CreateUpdateModelDto model, CancellationToken token)
+        {
+            var modelToUpdate = new Model
+            {
+                Id = id,
+                Name = model.Name,
+                ProductionStart = DateTime.Parse(model.ProductionStart),
+                ProductionEnd = DateTime.Parse(model.ProductionEnd)
+            };
+            
+            await ModelRepository.UpdateAsync(modelToUpdate, token);
+            await UnitOfWork.CommitAsync(token);
+        }
+
+        public async Task DeleteModel(int id, CancellationToken token)
+        {
+            await ModelRepository.DropAsync(id, token);
+            await UnitOfWork.CommitAsync(token);
+        }
     }
 }
