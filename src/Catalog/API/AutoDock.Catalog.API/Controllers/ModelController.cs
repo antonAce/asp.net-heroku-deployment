@@ -29,5 +29,9 @@ namespace AutoDock.Catalog.API.Controllers
         [HttpGet("{id}")]
         public async Task<ReadModelDto> GetModelById(int id, CancellationToken token) =>
             await _modelService.FindModelAsync(id, token);
+
+        [HttpPost]
+        public async Task CreateModel(CreateUpdateModelDto model, CancellationToken token) =>
+            await _modelService.CreateModel(model, token);
     }
 }

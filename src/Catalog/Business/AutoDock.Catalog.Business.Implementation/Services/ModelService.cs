@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,19 +11,23 @@ using AutoDock.Catalog.Business.Interfaces.Services;
 
 using AutoDock.Catalog.Domain.Core;
 using AutoDock.Catalog.Domain.Interfaces.Repositories;
+using AutoDock.Catalog.Domain.Interfaces.UnitOfWork;
 
 namespace AutoDock.Catalog.Business.Implementation.Services
 {
     public class ModelService : IModelService
     {
         private IModelRepository ModelRepository { get; }
+        private IUnitOfWork UnitOfWork { get; }
         private IMapper Mapper { get; }
 
         public ModelService(
             IModelRepository modelRepository,
+            IUnitOfWork unitOfWork,
             IMapper mapper)
         {
             ModelRepository = modelRepository;
+            UnitOfWork = unitOfWork;
             Mapper = mapper;
         }
 
@@ -36,5 +42,18 @@ namespace AutoDock.Catalog.Business.Implementation.Services
 
         public async Task<ReadModelDto> FindModelAsync(int id, CancellationToken token) =>
             Mapper.Map<Model, ReadModelDto>(await ModelRepository.FindByIdAsync(id, token));
+
+        public async Task CreateModel(CreateUpdateModelDto model, CancellationToken token)
+        {
+            var modelToCreate = new Model
+            {
+                Name = model.Name,
+                ProductionStart = DateTime.Parse(model.ProductionStart),
+                ProductionEnd = DateTime.Parse(model.ProductionEnd)
+            };
+            
+            await ModelRepository.CreateAsync(modelToCreate, token);
+            await UnitOfWork.CommitAsync(token);
+        }
     }
 }
