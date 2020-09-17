@@ -15,31 +15,31 @@ namespace AutoDock.Catalog.API.Controllers
     [Route("api/[controller]")]
     public class ModelController : ControllerBase
     {
-        private readonly IModelService _modelService;
+        private IModelService ModelService { get; }
 
         public ModelController(IModelService modelService) =>
-            _modelService = modelService;
+            ModelService = modelService;
 
         [HttpGet]
         public async Task<IReadOnlyCollection<ReadModelDto>> FetchModels(
             [FromQuery] int page,
             [FromQuery] int items,
-            CancellationToken token) => await _modelService.ModelPaginationAsync(page, items, token);
+            CancellationToken token) => await ModelService.ModelPaginationAsync(page, items, token);
 
         [HttpGet("{id}")]
         public async Task<ReadModelDto> GetModelById(int id, CancellationToken token) =>
-            await _modelService.FindModelAsync(id, token);
+            await ModelService.FindModelAsync(id, token);
 
         [HttpPost]
         public async Task CreateModel(CreateUpdateModelDto model, CancellationToken token) =>
-            await _modelService.CreateModel(model, token);
+            await ModelService.CreateModel(model, token);
 
         [HttpPut("{id}")]
         public async Task UpdateModel(int id, CreateUpdateModelDto model, CancellationToken token) =>
-            await _modelService.EditModel(id, model, token);
+            await ModelService.EditModel(id, model, token);
 
         [HttpDelete("{id}")]
         public async Task DeleteModel(int id, CancellationToken token) =>
-            await _modelService.DeleteModel(id, token);
+            await ModelService.DeleteModel(id, token);
     }
 }

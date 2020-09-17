@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace AutoDock.Catalog.Domain.Core
 {
@@ -11,5 +12,7 @@ namespace AutoDock.Catalog.Domain.Core
 
         public int ManufacturerId { get; set; }
         public Manufacturer Manufacturer { get; set; }
+
+        public ICollection<Vehicle> Vehicles { get; set; }
     }
 }

@@ -14,10 +14,12 @@ namespace AutoDock.Catalog.Business.Implementation.Dependencies
             var mapConfig = new MapperConfiguration(config =>
             {
                 config.AddProfile<ModelProfile>();
+                config.AddProfile<ManufacturerProfile>();
             });
 
-            services.AddScoped<IMapper>(mapper => mapConfig.CreateMapper());
+            services.AddScoped(mapper => mapConfig.CreateMapper());
             services.AddScoped<IModelService, ModelService>();
+            services.AddScoped<IManufacturerService, ManufacturerService>();
         }
     }
 }

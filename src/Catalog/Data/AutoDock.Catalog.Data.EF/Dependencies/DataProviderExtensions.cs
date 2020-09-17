@@ -17,6 +17,7 @@ namespace AutoDock.Catalog.Data.EF.Dependencies
             services.AddDbContext<AutoDockContext>(options => options.UseNpgsql(connectionString));
             services.AddScoped<IUoW, UoW>();
             services.AddScoped<IModelRepository, ModelRepository>();
+            services.AddScoped<IManufacturerRepository, ManufacturerRepository>();
         }
     }
 }

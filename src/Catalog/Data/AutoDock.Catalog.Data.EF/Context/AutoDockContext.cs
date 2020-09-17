@@ -7,6 +7,7 @@ namespace AutoDock.Catalog.Data.EF.Context
     public class AutoDockContext : DbContext
     {
         public DbSet<Model> Models { get; set; }
+        public DbSet<Manufacturer> Manufacturers { get; set; }
 
         public AutoDockContext(DbContextOptions<AutoDockContext> options)
             : base(options) {}
