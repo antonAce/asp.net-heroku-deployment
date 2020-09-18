@@ -31,8 +31,8 @@ namespace AutoDock.Catalog.Business.Implementation.Services
         }
 
         public async Task<IReadOnlyCollection<ReadModelDto>> ModelPaginationAsync(
-            int itemsCount,
             int pageNumber,
+            int itemsCount,
             CancellationToken token) =>
             Mapper.Map<IEnumerable<Model>, IReadOnlyCollection<ReadModelDto>>(await ModelRepository.FetchAsync(
                 itemsCount,

@@ -8,8 +8,8 @@ namespace AutoDock.Catalog.Business.Interfaces.Services
 {
     public interface IManufacturerService
     {
-        Task<IReadOnlyCollection<ReadManufacturerDto>> ManufacturerPaginationAsync(int itemsCount, 
-                                                                                   int pageNumber, CancellationToken token);
+        Task<IReadOnlyCollection<ReadManufacturerDto>> ManufacturerPaginationAsync(int pageNumber, 
+                                                                                   int itemsCount, CancellationToken token);
         Task<ReadManufacturerDto> FindManufacturerAsync(int id, CancellationToken token);
         Task CreateManufacturerAsync(CreateUpdateManufacturerDto manufacturer, CancellationToken token);
         Task EditManufacturerAsync(int id, CreateUpdateManufacturerDto manufacturer, CancellationToken token);

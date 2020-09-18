@@ -31,8 +31,8 @@ namespace AutoDock.Catalog.Business.Implementation.Services
             Mapper = mapper;
         }
         
-        public async Task<IReadOnlyCollection<ReadManufacturerDto>> ManufacturerPaginationAsync(int itemsCount, 
-                                                                                                int pageNumber, 
+        public async Task<IReadOnlyCollection<ReadManufacturerDto>> ManufacturerPaginationAsync(int pageNumber, 
+                                                                                                int itemsCount, 
                                                                                                 CancellationToken token) =>
             Mapper.Map<IEnumerable<Manufacturer>, IReadOnlyCollection<ReadManufacturerDto>>(
                 await ManufacturerRepository.FetchAsync(

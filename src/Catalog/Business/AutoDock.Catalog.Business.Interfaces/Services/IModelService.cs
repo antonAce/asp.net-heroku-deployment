@@ -8,7 +8,7 @@ namespace AutoDock.Catalog.Business.Interfaces.Services
 {
     public interface IModelService
     {
-        Task<IReadOnlyCollection<ReadModelDto>> ModelPaginationAsync(int itemsCount, int pageNumber, CancellationToken token);
+        Task<IReadOnlyCollection<ReadModelDto>> ModelPaginationAsync(int pageNumber, int itemsCount, CancellationToken token);
         Task<ReadModelDto> FindModelAsync(int id, CancellationToken token);
         Task CreateModelAsync(CreateUpdateModelDto model, CancellationToken token);
         Task EditModelAsync(int id, CreateUpdateModelDto model, CancellationToken token);
