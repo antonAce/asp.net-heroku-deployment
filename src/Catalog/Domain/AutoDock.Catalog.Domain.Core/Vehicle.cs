@@ -6,7 +6,7 @@ namespace AutoDock.Catalog.Domain.Core
     {
         public string Vin { get; set; }
         public decimal Price { get; set; }
-        public DateTime Year { get; set; }
+        public int Year { get; set; }
 
         public string Description { get; set; }
         public Fuel Fuel { get; set; }

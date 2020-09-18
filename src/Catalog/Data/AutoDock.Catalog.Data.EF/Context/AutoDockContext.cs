@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 
 using AutoDock.Catalog.Domain.Core;
+using AutoDock.Catalog.Data.EF.Mapping.Fields;
 
 namespace AutoDock.Catalog.Data.EF.Context
 {
@@ -11,5 +12,12 @@ namespace AutoDock.Catalog.Data.EF.Context
 
         public AutoDockContext(DbContextOptions<AutoDockContext> options)
             : base(options) {}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ModelMaps());
+            modelBuilder.ApplyConfiguration(new ManufacturerMaps());
+            modelBuilder.ApplyConfiguration(new VehicleMaps());
+        }
     }
 }
