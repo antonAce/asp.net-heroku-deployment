@@ -29,5 +29,18 @@ namespace AutoDock.Catalog.API.Controllers
         [HttpGet("{id}")]
         public async Task<ReadManufacturerDto> GetManufacturerById(int id, CancellationToken token) =>
             await ManufacturerService.FindManufacturerAsync(id, token);
+
+        [HttpPost]
+        public async Task CreateManufacturerAsync(CreateUpdateManufacturerDto manufacturer, CancellationToken token) =>
+            await ManufacturerService.CreateManufacturerAsync(manufacturer, token);
+
+        [HttpPut("{id}")]
+        public async Task EditManufacturerAsync(int id, CreateUpdateManufacturerDto manufacturer,
+            CancellationToken token) =>
+            await ManufacturerService.EditManufacturerAsync(id, manufacturer, token);
+
+        [HttpDelete("{id}")]
+        public async Task DeleteManufacturerAsync(int id, CancellationToken token) =>
+            await ManufacturerService.DeleteManufacturerAsync(id, token);
     }
 }

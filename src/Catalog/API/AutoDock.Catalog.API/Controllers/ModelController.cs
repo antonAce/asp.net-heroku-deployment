@@ -32,14 +32,14 @@ namespace AutoDock.Catalog.API.Controllers
 
         [HttpPost]
         public async Task CreateModel(CreateUpdateModelDto model, CancellationToken token) =>
-            await ModelService.CreateModel(model, token);
+            await ModelService.CreateModelAsync(model, token);
 
         [HttpPut("{id}")]
         public async Task UpdateModel(int id, CreateUpdateModelDto model, CancellationToken token) =>
-            await ModelService.EditModel(id, model, token);
+            await ModelService.EditModelAsync(id, model, token);
 
         [HttpDelete("{id}")]
         public async Task DeleteModel(int id, CancellationToken token) =>
-            await ModelService.DeleteModel(id, token);
+            await ModelService.DeleteModelAsync(id, token);
     }
 }

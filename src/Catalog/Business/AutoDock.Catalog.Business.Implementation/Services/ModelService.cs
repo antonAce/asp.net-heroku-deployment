@@ -42,7 +42,7 @@ namespace AutoDock.Catalog.Business.Implementation.Services
         public async Task<ReadModelDto> FindModelAsync(int id, CancellationToken token) =>
             Mapper.Map<Model, ReadModelDto>(await ModelRepository.FindByIdAsync(id, token));
 
-        public async Task CreateModel(CreateUpdateModelDto model, CancellationToken token)
+        public async Task CreateModelAsync(CreateUpdateModelDto model, CancellationToken token)
         {
             var modelToCreate = new Model
             {
@@ -55,7 +55,7 @@ namespace AutoDock.Catalog.Business.Implementation.Services
             await UnitOfWork.CommitAsync(token);
         }
 
-        public async Task EditModel(int id, CreateUpdateModelDto model, CancellationToken token)
+        public async Task EditModelAsync(int id, CreateUpdateModelDto model, CancellationToken token)
         {
             var modelToUpdate = new Model
             {
@@ -69,7 +69,7 @@ namespace AutoDock.Catalog.Business.Implementation.Services
             await UnitOfWork.CommitAsync(token);
         }
 
-        public async Task DeleteModel(int id, CancellationToken token)
+        public async Task DeleteModelAsync(int id, CancellationToken token)
         {
             await ModelRepository.DropAsync(id, token);
             await UnitOfWork.CommitAsync(token);

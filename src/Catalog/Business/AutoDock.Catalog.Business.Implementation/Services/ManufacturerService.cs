@@ -42,5 +42,36 @@ namespace AutoDock.Catalog.Business.Implementation.Services
 
         public async Task<ReadManufacturerDto> FindManufacturerAsync(int id, CancellationToken token) =>
             Mapper.Map<Manufacturer, ReadManufacturerDto>(await ManufacturerRepository.FindByIdAsync(id, token));
+
+        public async Task CreateManufacturerAsync(CreateUpdateManufacturerDto manufacturer, CancellationToken token)
+        {
+            var manufacturerToCreate = new Manufacturer
+            {
+                Name = manufacturer.Name,
+                Foundation = DateTime.Parse(manufacturer.Foundation)
+            };
+
+            await ManufacturerRepository.CreateAsync(manufacturerToCreate, token);
+            await UnitOfWork.CommitAsync(token);
+        }
+
+        public async Task EditManufacturerAsync(int id, CreateUpdateManufacturerDto manufacturer, CancellationToken token)
+        {
+            var manufacturerToUpdate = new Manufacturer
+            {
+                Id = id,
+                Name = manufacturer.Name,
+                Foundation = DateTime.Parse(manufacturer.Foundation)
+            };
+
+            await ManufacturerRepository.UpdateAsync(manufacturerToUpdate, token);
+            await UnitOfWork.CommitAsync(token);
+        }
+
+        public async Task DeleteManufacturerAsync(int id, CancellationToken token)
+        {
+            await ManufacturerRepository.DropAsync(id, token);
+            await UnitOfWork.CommitAsync(token);
+        }
     }
 }
