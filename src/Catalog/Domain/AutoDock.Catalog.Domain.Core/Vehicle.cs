@@ -10,7 +10,7 @@ namespace AutoDock.Catalog.Domain.Core
 
         public string Description { get; set; }
         
-        public int FuelId { get; set; }
+        public FuelType FuelType { get; set; }
         public Fuel Fuel { get; set; }
 
         public int? ModelId { get; set; }

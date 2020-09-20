@@ -33,7 +33,7 @@ namespace AutoDock.Catalog.Data.EF.Mapping.Fields
 
             builder.HasOne(v => v.Fuel)
                 .WithMany(f => f.Vehicles)
-                .HasForeignKey(v => v.FuelId)
+                .HasForeignKey(v => v.FuelType)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }

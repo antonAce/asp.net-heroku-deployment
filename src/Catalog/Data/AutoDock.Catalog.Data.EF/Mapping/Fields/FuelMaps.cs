@@ -9,8 +9,8 @@ namespace AutoDock.Catalog.Data.EF.Mapping.Fields
     {
         public void Configure(EntityTypeBuilder<Fuel> builder)
         {
-            builder.Property(f => f.Type)
-                .HasConversion<string>();
+            builder.Property(f => f.Id)
+                .HasConversion<int>();
         }
     }
 }

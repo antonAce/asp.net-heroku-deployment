@@ -4,8 +4,8 @@ namespace AutoDock.Catalog.Domain.Core
 {
     public class Fuel
     {
-        public int Id { get; set; }
-        public FuelType Type { get; set; }
+        public FuelType Id { get; set; }
+        public string Name { get; set; }
 
         public ICollection<Vehicle> Vehicles { get; set; }
     }

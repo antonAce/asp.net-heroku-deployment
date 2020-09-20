@@ -1,3 +1,4 @@
+using AutoDock.Catalog.Data.EF.Mapping.Data;
 using Microsoft.EntityFrameworkCore;
 
 using AutoDock.Catalog.Domain.Core;
@@ -18,6 +19,9 @@ namespace AutoDock.Catalog.Data.EF.Context
             modelBuilder.ApplyConfiguration(new ModelMaps());
             modelBuilder.ApplyConfiguration(new ManufacturerMaps());
             modelBuilder.ApplyConfiguration(new VehicleMaps());
+            modelBuilder.ApplyConfiguration(new FuelMaps());
+            
+            modelBuilder.ApplyConfiguration(new FuelData());
         }
     }
 }
