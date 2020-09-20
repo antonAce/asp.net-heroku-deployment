@@ -1,12 +1,12 @@
+using System.Collections.Generic;
+
 namespace AutoDock.Catalog.Domain.Core
 {
-    public enum Fuel
+    public class Fuel
     {
-        Gasoline,
-        Diesel,
-        Ethanol,
-        Biodiesel,
-        Electricity,
-        Hydrogen
+        public int Id { get; set; }
+        public FuelType Type { get; set; }
+
+        public ICollection<Vehicle> Vehicles { get; set; }
     }
 }

@@ -9,6 +9,8 @@ namespace AutoDock.Catalog.Domain.Core
         public int Year { get; set; }
 
         public string Description { get; set; }
+        
+        public int FuelId { get; set; }
         public Fuel Fuel { get; set; }
 
         public int? ModelId { get; set; }

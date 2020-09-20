@@ -25,14 +25,16 @@ namespace AutoDock.Catalog.Data.EF.Mapping.Fields
             builder.Property(v => v.Description)
                 .IsRequired()
                 .HasMaxLength(500);
-            
-            builder.Property(v => v.Fuel)
-                .HasConversion<string>();
 
             builder.HasOne(v => v.Model)
                 .WithMany(m => m.Vehicles)
                 .HasForeignKey(v => v.ModelId)
                 .OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasOne(v => v.Fuel)
+                .WithMany(f => f.Vehicles)
+                .HasForeignKey(v => v.FuelId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
