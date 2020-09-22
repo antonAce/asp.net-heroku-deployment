@@ -43,11 +43,11 @@ namespace AutoDock.Catalog.API.Controllers
         public async Task DeleteManufacturerAsync(int id, CancellationToken token) =>
             await ManufacturerService.DeleteManufacturerAsync(id, token);
 
-        [HttpGet("{id}/models")]
+        [HttpGet("{id}/model")]
         public async Task<IReadOnlyCollection<ReadModelDto>> GetManufacturerModelsAsync(int id, CancellationToken token) =>
             await ManufacturerService.GetManufacturerModelsAsync(id, token);
 
-        [HttpPost("{id}/models")]
+        [HttpPost("{id}/model")]
         public async Task AttachModelToManufacturer(int id, CreateUpdateModelDto model, CancellationToken token) =>
             await ManufacturerService.AttachModelToManufacturer(id, model, token);
     }
