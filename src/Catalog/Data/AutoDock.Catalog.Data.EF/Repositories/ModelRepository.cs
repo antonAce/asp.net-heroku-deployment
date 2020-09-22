@@ -20,10 +20,10 @@ namespace AutoDock.Catalog.Data.EF.Repositories
             await Context.Models.AddAsync(model, token);
 
         public async Task<IReadOnlyCollection<Model>> FetchAsync(int limit, int offset, CancellationToken token) =>
-            await Context.Models.Skip(offset).Take(limit).ToArrayAsync(token);
+            await Context.Models.Skip(offset).Take(limit).AsNoTracking().ToArrayAsync(token);
 
         public async Task<Model> FindByIdAsync(int id, CancellationToken token) =>
-            await Context.Models.FirstOrDefaultAsync(m => m.Id == id, token);
+            await Context.Models.AsNoTracking().FirstOrDefaultAsync(m => m.Id == id, token);
 
         public async Task UpdateAsync(Model model, CancellationToken token)
         {
