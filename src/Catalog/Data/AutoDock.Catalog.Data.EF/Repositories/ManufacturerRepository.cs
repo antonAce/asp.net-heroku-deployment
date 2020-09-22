@@ -25,7 +25,10 @@ namespace AutoDock.Catalog.Data.EF.Repositories
         public async Task<Manufacturer> FindByIdAsync(int id, CancellationToken token)
         {
             var manufacturer = await Context.Manufacturers.FirstOrDefaultAsync(m => m.Id == id, token);
-            await Context.Entry(manufacturer).Collection(m => m.Models).LoadAsync(token);
+
+            if (manufacturer != null)
+                await Context.Entry(manufacturer).Collection(m => m.Models).LoadAsync(token);
+
             return manufacturer;
         }
 
