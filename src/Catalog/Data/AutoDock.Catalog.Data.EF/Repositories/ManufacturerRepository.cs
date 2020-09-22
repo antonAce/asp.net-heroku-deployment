@@ -22,8 +22,12 @@ namespace AutoDock.Catalog.Data.EF.Repositories
         public async Task<IReadOnlyCollection<Manufacturer>> FetchAsync(int limit, int offset, CancellationToken token) =>
             await Context.Manufacturers.Skip(offset).Take(limit).ToArrayAsync(token);
 
-        public async Task<Manufacturer> FindByIdAsync(int id, CancellationToken token) =>
-            await Context.Manufacturers.FirstOrDefaultAsync(m => m.Id == id, token);
+        public async Task<Manufacturer> FindByIdAsync(int id, CancellationToken token)
+        {
+            var manufacturer = await Context.Manufacturers.FirstOrDefaultAsync(m => m.Id == id, token);
+            await Context.Entry(manufacturer).Collection(m => m.Models).LoadAsync(token);
+            return manufacturer;
+        }
 
         public async Task UpdateAsync(Manufacturer manufacturer, CancellationToken token)
         {

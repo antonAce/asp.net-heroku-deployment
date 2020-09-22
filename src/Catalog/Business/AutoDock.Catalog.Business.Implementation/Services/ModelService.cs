@@ -42,19 +42,6 @@ namespace AutoDock.Catalog.Business.Implementation.Services
         public async Task<ReadModelDto> FindModelAsync(int id, CancellationToken token) =>
             Mapper.Map<Model, ReadModelDto>(await ModelRepository.FindByIdAsync(id, token));
 
-        public async Task CreateModelAsync(CreateUpdateModelDto model, CancellationToken token)
-        {
-            var modelToCreate = new Model
-            {
-                Name = model.Name,
-                ProductionStart = DateTime.Parse(model.ProductionStart),
-                ProductionEnd = DateTime.Parse(model.ProductionEnd)
-            };
-            
-            await ModelRepository.CreateAsync(modelToCreate, token);
-            await UnitOfWork.CommitAsync(token);
-        }
-
         public async Task EditModelAsync(int id, CreateUpdateModelDto model, CancellationToken token)
         {
             var modelToUpdate = new Model

@@ -10,7 +10,6 @@ namespace AutoDock.Catalog.Business.Interfaces.Services
     {
         Task<IReadOnlyCollection<ReadModelDto>> ModelPaginationAsync(int pageNumber, int itemsCount, CancellationToken token);
         Task<ReadModelDto> FindModelAsync(int id, CancellationToken token);
-        Task CreateModelAsync(CreateUpdateModelDto model, CancellationToken token);
         Task EditModelAsync(int id, CreateUpdateModelDto model, CancellationToken token);
         Task DeleteModelAsync(int id, CancellationToken token);
     }

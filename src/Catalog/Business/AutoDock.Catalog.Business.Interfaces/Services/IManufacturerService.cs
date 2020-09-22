@@ -14,5 +14,7 @@ namespace AutoDock.Catalog.Business.Interfaces.Services
         Task CreateManufacturerAsync(CreateUpdateManufacturerDto manufacturer, CancellationToken token);
         Task EditManufacturerAsync(int id, CreateUpdateManufacturerDto manufacturer, CancellationToken token);
         Task DeleteManufacturerAsync(int id, CancellationToken token);
+        Task<IReadOnlyCollection<ReadModelDto>> GetManufacturerModelsAsync(int id, CancellationToken token);
+        Task AttachModelToManufacturer(int id, CreateUpdateModelDto model, CancellationToken token);
     }
 }

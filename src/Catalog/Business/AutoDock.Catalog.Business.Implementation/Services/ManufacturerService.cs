@@ -18,15 +18,18 @@ namespace AutoDock.Catalog.Business.Implementation.Services
     public class ManufacturerService : IManufacturerService
     {
         private IManufacturerRepository ManufacturerRepository { get; }
+        private IModelRepository ModelRepository { get; }
         private IUnitOfWork UnitOfWork { get; }
         private IMapper Mapper { get; }
         
         public ManufacturerService(
             IManufacturerRepository manufacturerRepository,
+            IModelRepository modelRepository,
             IUnitOfWork unitOfWork,
             IMapper mapper)
         {
             ManufacturerRepository = manufacturerRepository;
+            ModelRepository = modelRepository;
             UnitOfWork = unitOfWork;
             Mapper = mapper;
         }
@@ -71,6 +74,27 @@ namespace AutoDock.Catalog.Business.Implementation.Services
         public async Task DeleteManufacturerAsync(int id, CancellationToken token)
         {
             await ManufacturerRepository.DropAsync(id, token);
+            await UnitOfWork.CommitAsync(token);
+        }
+
+        public async Task<IReadOnlyCollection<ReadModelDto>> GetManufacturerModelsAsync(int id, CancellationToken token)
+        {
+            var manufacturer = await ManufacturerRepository.FindByIdAsync(id, token);
+            var models = Mapper.Map<IEnumerable<Model>, IReadOnlyCollection<ReadModelDto>>(manufacturer.Models);
+            return models;
+        }
+
+        public async Task AttachModelToManufacturer(int id, CreateUpdateModelDto model, CancellationToken token)
+        {
+            var modelToCreate = new Model
+            {
+                Name = model.Name,
+                ProductionStart = DateTime.Parse(model.ProductionStart),
+                ProductionEnd = DateTime.Parse(model.ProductionEnd),
+                ManufacturerId = id,
+            };
+            
+            await ModelRepository.CreateAsync(modelToCreate, token);
             await UnitOfWork.CommitAsync(token);
         }
     }
