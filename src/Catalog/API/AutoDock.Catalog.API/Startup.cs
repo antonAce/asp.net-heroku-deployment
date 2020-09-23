@@ -34,7 +34,7 @@ namespace AutoDock.Catalog.API
                 options.Filters.Add<GlobalExceptionFilter>();
             });
 
-            services.AddScoped<BadRequestFilterAttribute>();
+            services.AddScoped<BadRequestExceptionFilter>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -86,6 +86,11 @@ namespace AutoDock.Catalog.Business.Implementation.Services
 
         public async Task AttachModelToManufacturer(int id, CreateUpdateModelDto model, CancellationToken token)
         {
+            var manufacturer = await ManufacturerRepository.FindByIdAsync(id, token);
+            
+            if (manufacturer == null)
+                throw new ApplicationException("Manufacturer with given Id doesn't exist.");
+            
             var modelToCreate = new Model
             {
                 Name = model.Name,
