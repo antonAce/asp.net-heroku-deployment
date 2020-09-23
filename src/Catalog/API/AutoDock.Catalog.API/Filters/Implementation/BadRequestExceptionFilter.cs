@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace AutoDock.Catalog.API.Filters.Implementation
 {
-    public class BadRequestExceptionFilter : IExceptionFilter
+    public sealed class BadRequestExceptionFilter : IExceptionFilter
     {
         private readonly ILogger _logger;
         

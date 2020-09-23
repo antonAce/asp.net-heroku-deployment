@@ -1,22 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Serilog;
 
 using AutoDock.Catalog.Data.EF.Dependencies;
 using AutoDock.Catalog.Business.Implementation.Dependencies;
 
 using AutoDock.Catalog.API.Filters.Implementation;
+using AutoDock.Catalog.API.Filters.Providers;
 
 namespace AutoDock.Catalog.API
 {
@@ -41,6 +33,8 @@ namespace AutoDock.Catalog.API
             {
                 options.Filters.Add<GlobalExceptionFilter>();
             });
+
+            services.AddScoped<BadRequestFilterAttribute>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
