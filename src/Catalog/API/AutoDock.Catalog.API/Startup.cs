@@ -35,6 +35,7 @@ namespace AutoDock.Catalog.API
             });
 
             services.AddScoped<BadRequestExceptionFilter>();
+            services.AddScoped<FetchItemsEndpointFilter>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

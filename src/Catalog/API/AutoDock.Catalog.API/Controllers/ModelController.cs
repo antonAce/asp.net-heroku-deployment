@@ -20,6 +20,7 @@ namespace AutoDock.Catalog.API.Controllers
             ModelService = modelService;
 
         [HttpGet]
+        [FetchItemsEndpoint]
         public async Task<IReadOnlyCollection<ReadModelDto>> FetchModels(
             [FromQuery] int page,
             [FromQuery] int items,

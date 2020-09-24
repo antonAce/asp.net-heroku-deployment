@@ -10,11 +10,11 @@ namespace AutoDock.Catalog.API.Filters.Implementation
 {
     public sealed class GlobalExceptionFilter : IExceptionFilter
     {
-        private readonly ILogger _logger;
+        public ILogger Logger { get; }
         
         public GlobalExceptionFilter(ILogger<GlobalExceptionFilter> logger)
         {
-            _logger = logger;
+            Logger = logger;
         }
 
         public void OnException(ExceptionContext context)
@@ -26,7 +26,7 @@ namespace AutoDock.Catalog.API.Filters.Implementation
                 context.Exception.StackTrace
             };
 
-            _logger.LogError("{message}", message);
+            Logger.LogError("{message}", message);
 
             context.Result = new ContentResult
             {

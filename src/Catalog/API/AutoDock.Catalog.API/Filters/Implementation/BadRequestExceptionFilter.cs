@@ -8,11 +8,11 @@ namespace AutoDock.Catalog.API.Filters.Implementation
 {
     public sealed class BadRequestExceptionFilter : IExceptionFilter
     {
-        private readonly ILogger _logger;
+        public ILogger Logger { get; }
         
         public BadRequestExceptionFilter(ILogger<BadRequestExceptionFilter> logger)
         {
-            _logger = logger;
+            Logger = logger;
         }
         
         public void OnException(ExceptionContext context)
@@ -26,7 +26,7 @@ namespace AutoDock.Catalog.API.Filters.Implementation
                 Trace = context.Exception.StackTrace
             };
 
-            _logger.LogInformation("{message}", message);
+            Logger.LogInformation("{message}", message);
 
             context.Result = new ContentResult
             {

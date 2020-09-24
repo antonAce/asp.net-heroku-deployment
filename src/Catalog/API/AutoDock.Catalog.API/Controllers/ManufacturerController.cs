@@ -20,6 +20,7 @@ namespace AutoDock.Catalog.API.Controllers
             ManufacturerService = manufacturerService;
         
         [HttpGet]
+        [FetchItemsEndpoint]
         public async Task<IReadOnlyCollection<ReadManufacturerDto>> FetchManufacturers(
             [FromQuery] int page,
             [FromQuery] int items,
