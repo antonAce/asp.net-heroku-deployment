@@ -13,16 +13,25 @@
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "",
-      "applicationUrl": "http://localhost:5000",
+      "applicationUrl": "http://localhost:46190",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "AutoDock.Web.Spa Production": {
+    "AutoDock.Web.Spa Proxy": {
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "",
-      "applicationUrl": "https://localhost:5001",
+      "applicationUrl": "http://localhost:46190",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    "AutoDock.Web.Spa No proxy": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "launchUrl": "",
+      "applicationUrl": "https://localhost:46191",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Production"
       }

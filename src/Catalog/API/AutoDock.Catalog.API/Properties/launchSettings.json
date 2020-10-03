@@ -18,7 +18,16 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "AutoDock.Catalog Production": {
+    "AutoDock.Catalog Proxy": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "launchUrl": "",
+      "applicationUrl": "http://localhost:46180",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    "AutoDock.Catalog No proxy": {
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "",
